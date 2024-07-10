@@ -1,0 +1,35 @@
+<h4>data-and-event-binding works!</h4>
+
+<!-- {{ expression }} -->
+<p>{{ user.name }} - {{ user.age }}</p>
+
+
+<!-- BINDING
+[] component -> template
+() template -> component
+[()] template <=> component
+-->
+
+<p>
+<!-- PROPERTY BINDING: hiển thị dữ liệu từ component ra template
+     [property]="'value' | expression"
+-->
+<!--<input [type]="inputType" value="ABC">-->
+<input type="text" [value]="user.name">
+
+
+<!-- EVENT BINDING: nhận sự kiện từ template và xử lý bên component
+     (event)="expression"
+-->
+  <button type="button" (click)="handler($event)">CLick me!</button>
+</p>
+
+<!-- TWO-WAY BINDING -->
+<input type="text" [(ngModel)]="name" (ngModelChange)="name = $event">
+{{ name }}
+
+<!--
+- $event là một đối tượng đặc biệt trong Angular dùng để truyền thông tin sự kiện từ DOM đến component.
+- $event chứa thông tin chi tiết về sự kiện và có thể được sử dụng để truy cập các thuộc tính
+của sự kiện hoặc phần tử DOM kích hoạt sự kiện.
+-->
