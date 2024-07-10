@@ -1,0 +1,35 @@
+<strong>ANGULAR STRUCTURE DIRECTIVE - ngIf</strong>
+<br>
+
+<!-- Cách 1: ngIf directive
+- ngIf: hiển thị một phần view (template) theo một điều kiện
+- Cú pháp: *ngIf="expression"
+ -->
+
+<!--<hello *ngIf="user.age >= 18; else under18" [name]="user.name"></hello>-->
+<!--<p *ngIf="user.age < 18">-->
+<!--  You are too young to see this content-->
+<!--</p>-->
+
+
+<!-- Cách 2: Tag ng-template
+- ng-template là một tag được cung cấp bởi Angular, nó sẽ lưu trữ một Template được định nghĩa bên trong cặp thẻ mở/đóng của nó
+- Nội dung bên trong <ng-template> chỉ được render khi sử dụng nó thông qua một template reference
+hoặc một cấu trúc directive như ngIf, ngFor, hoặc ngSwitch.
+- #variable -> tạo một template reference variable. Biến này có thể được sử dụng để tham chiếu đến nội dung của template
+và render nó theo điều kiện bạn muốn.
+-->
+<hello *ngIf="user.age >= 18; else under18" [name]="user.name"></hello>
+<ng-template #under18>
+  <p>You are too young to see this content</p>
+</ng-template>
+
+<!-- Cách viết đầy đủ của ngIf -->
+
+<button (click)="user.age = user.age - 1">-</button>
+Age: {{ user.age }}
+<button (click)="user.age = user.age + 1">+</button>
+
+
+
+
