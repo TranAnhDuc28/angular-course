@@ -1,0 +1,85 @@
+<strong>ANGULAR STRUCTURE DIRECTIVE - ngFor</strong>
+
+<!-- ngFor directive
+- * : structure directive
+- ngFor: sử dụng để lặp lại một template cho mỗi phần tử trong một mảng.
+- Cú pháp:
+        <div *ngFor="let item of items; let i = index">
+          Nội dung muốn lặp lại
+          {{i}}: {{item}}
+        </div>
+- Mộy số biến local variable trong một ngForOf template:
+  + ($implicit: T) ->	Giá trị của phần tử trong danh sách ở lần lặp hiện tại
+  + (index: number) ->	index của lần lặp hiện tại
+  + (count: number)	-> số lượng phần tử trong danh sách
+  + (first: boolean) ->	True nếu đây là phần tử đầu tiên trong danh sách
+  + (last: boolean)	-> True nếu đây là phần tử cuối cùng trong danh sách
+  + (even: boolean)	-> True nếu đây là phần tử ở index chẵn
+  + (odd: boolean) ->	True nếu đây là phần tử ở index lẻ
+-->
+
+<!-- Cú pháp viết tắt -->
+<!--<ul>-->
+<!--  <li *ngFor="let u of users; index as i; count as total;-->
+<!--              first as isFirst; last as isLast; even as isEven; odd as isOdd">-->
+<!--    <span>{{ u.id }} - {{ u.name }} - {{ u.phone }}</span>-->
+<!--    <br>-->
+<!--    <span>at index {{ i }} out of {{ total }}</span>-->
+<!--    <br>-->
+<!--    <span *ngIf="isEven">I am even number</span>-->
+<!--    <br>-->
+<!--    <span *ngIf="isOdd">I am odd number</span>-->
+<!--    <br>-->
+<!--    <span *ngIf="isFirst">I am First</span>-->
+<!--    <br>-->
+<!--    <span *ngIf="isLast">I am Last</span>-->
+<!--    <br><br><br>-->
+<!--  </li>-->
+<!--</ul>-->
+<!--<button *ngFor="let tag of tags; last as isLast" [class.right-margin]="!isLast">{{tag}}</button>-->
+
+<!-- Cú pháp viết đầy đủ -->
+<!--<ul>-->
+<!--  <ng-template-->
+<!--    ngFor-->
+<!--    [ngForOf]="users"-->
+<!--    let-user-->
+<!--    let-idx="index"-->
+<!--    let-total="count"-->
+<!--    let-isFirst="first"-->
+<!--    let-isLast="last"-->
+<!--    let-isEven="even"-->
+<!--    let-isOdd="odd"-->
+<!--  >-->
+<!--    <div>-->
+<!--      ({{idx}})/({{total}}): {{user.id}} - {{user.name}} - {{user.phone}} - -->
+<!--      <span>I am-->
+<!--        <span *ngIf="isEven">even number</span>-->
+<!--        <span *ngIf="isOdd">odd number</span>-->
+<!--        <span *ngIf="isFirst"> and First</span>-->
+<!--        <span *ngIf="isLast"> and Last</span>-->
+<!--      </span>-->
+<!--    </div>-->
+<!--  </ng-template>-->
+<!--</ul>-->
+
+<!-- ngIf kết hợp với ngFor -->
+<ul>
+  <ng-container *ngIf="users.length > 0; else noUsers">
+    <li *ngFor="let u of users; index as i; count as total;
+              first as isFirst; last as isLast; even as isEven; odd as isOdd">
+      <span>{{ u.id }} - {{ u.name }} - {{ u.phone }}</span>
+      <br>
+      <span>at index {{ i }} out of {{ total }} - </span>
+      <span *ngIf="isEven">I am even number</span>
+      <span *ngIf="isOdd">I am odd number</span>
+      <br>
+      <span *ngIf="isFirst">I am First</span>
+      <span *ngIf="isLast">I am Last</span>
+      <br><br><br>
+    </li>
+  </ng-container>
+  <ng-template #noUsers>
+    <li>No users.</li>
+  </ng-template>
+</ul>

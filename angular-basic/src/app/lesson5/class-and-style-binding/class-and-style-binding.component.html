@@ -1,0 +1,40 @@
+<strong>class-and-style-binding</strong>
+
+<p>CLASS BINDING</p>
+<!-- Syntax:
+- [class.name-class]
+- [class]="array"
+- [class]="object" { [name-class: string]: boolean }
+- [class]="variable"
+-->
+<button (click)="isDanger = !isDanger">Toggle Danger</button> <br>
+<button (click)="isWarning = !isWarning">Toggle Warning</button>
+
+<div class="flex-box">
+  <div class="box" [class.red-border]="isDanger" [class.yellow-background]="isWarning">[class.name-class]</div>
+  <div class="box" [class]="['red-border', 'yellow-background']">[class]="array"</div>
+  <div class="box" [class]="{'red-border': isDanger, 'yellow-background': isWarning}">[class]="object"</div>
+  <div class="box" [class]="classes">[class]="variable"</div>
+</div>
+
+
+<p>STYLE BINDING</p>
+<!-- Syntax:
+- [style.nameStyle]
+- [style.name-style]
+- [style.nameStyle.unit] -> VD: [style.fontSize.rem]="2"
+- [style]="object"
+- [style.css--variable]
+-->
+<div class="flex-box">
+  <div class="box" [style.color]="'red'" [style.backgroundColor]="'green'" [style.fontSize.px]="20">
+    STYLE BINDING
+  </div>
+  <div class="box" [style]="{color: 'red', backgroundColor: 'yellow', fontSize: '2rem'}">
+    STYLE BINDING OBJECT
+  </div>
+  <div [style.--text-color]="isDanger ? 'red' : 'blue'"
+       [style]="{color: 'var(--text-color)', backgroundColor: 'yellow', fontSize: '2rem'}">
+    STYLE BINDING CSS VARIABLE
+  </div>
+</div>

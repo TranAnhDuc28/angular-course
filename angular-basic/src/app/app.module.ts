@@ -7,7 +7,9 @@ import { HiComponent } from './lesson1/hi/hi.component';
 import { DataAndEventBindingComponent } from './lesson2/data-and-event-binding/data-and-event-binding.component';
 import {FormsModule} from "@angular/forms";
 import { DirectiveNgifComponent } from './lesson3/directive-ngif/directive-ngif.component';
-import { DrectiveNgforComponent } from './lesson4/drective-ngfor/drective-ngfor.component';
+import { DirectiveNgforComponent } from './lesson4/directive-ngfor/directive-ngfor.component';
+import { ClassAndStyleBindingComponent } from './lesson5/class-and-style-binding/class-and-style-binding.component';
+import { InpitBindingComponent } from './lesson6/inpit-binding/inpit-binding.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { DrectiveNgforComponent } from './lesson4/drective-ngfor/drective-ngfor.
     HiComponent,
     DataAndEventBindingComponent,
     DirectiveNgifComponent,
-    DrectiveNgforComponent
+    DirectiveNgforComponent,
+    ClassAndStyleBindingComponent,
+    InpitBindingComponent
   ],
   imports: [
     BrowserModule,
