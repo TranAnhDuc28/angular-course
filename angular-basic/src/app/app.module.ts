@@ -9,7 +9,8 @@ import {FormsModule} from "@angular/forms";
 import { DirectiveNgifComponent } from './lesson3/directive-ngif/directive-ngif.component';
 import { DirectiveNgforComponent } from './lesson4/directive-ngfor/directive-ngfor.component';
 import { ClassAndStyleBindingComponent } from './lesson5/class-and-style-binding/class-and-style-binding.component';
-import { InpitBindingComponent } from './lesson6/inpit-binding/inpit-binding.component';
+import { InputBindingComponent} from './lesson6/inpit-binding/input-binding.component';
+import {ProgressBarComponent} from "./lesson6/progress-bar.component";
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { InpitBindingComponent } from './lesson6/inpit-binding/inpit-binding.com
     DirectiveNgifComponent,
     DirectiveNgforComponent,
     ClassAndStyleBindingComponent,
-    InpitBindingComponent
+    InputBindingComponent,
+    ProgressBarComponent
   ],
   imports: [
     BrowserModule,

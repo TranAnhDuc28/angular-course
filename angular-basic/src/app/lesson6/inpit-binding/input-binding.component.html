@@ -1,0 +1,11 @@
+<strong>input-binding</strong>
+
+<p>
+  <button style="margin-top: 20px" (click)="currentProgress = currentProgress + 1">Increase progress</button>
+  <progress-bar></progress-bar>
+  <progress-bar
+    [progress]="currentProgress"
+    [progressColor]="'dodgerblue'">
+  </progress-bar>
+</p>
+
