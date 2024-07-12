@@ -13,6 +13,8 @@ import { InputBindingComponent} from './lesson6/inpit-binding/input-binding.comp
 import {ProgressBarComponent} from "./lesson6/progress-bar.component";
 import { AuthorListComponent } from './lesson7/output-binding/author-list.component';
 import {AuthorDetailsComponent} from "./lesson7/output-binding/author-details.component";
+import { TwoWayBindingComponent } from './lesson8/two-way-binding/two-way-binding.component';
+import {ToggleComponent} from "./lesson8/toggle.component";
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import {AuthorDetailsComponent} from "./lesson7/output-binding/author-details.co
     InputBindingComponent,
     ProgressBarComponent,
     AuthorListComponent,
-    AuthorDetailsComponent
+    AuthorDetailsComponent,
+    TwoWayBindingComponent,
+    ToggleComponent
   ],
   imports: [
     BrowserModule,
