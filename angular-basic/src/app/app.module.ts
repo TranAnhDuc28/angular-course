@@ -11,6 +11,8 @@ import { DirectiveNgforComponent } from './lesson4/directive-ngfor/directive-ngf
 import { ClassAndStyleBindingComponent } from './lesson5/class-and-style-binding/class-and-style-binding.component';
 import { InputBindingComponent} from './lesson6/inpit-binding/input-binding.component';
 import {ProgressBarComponent} from "./lesson6/progress-bar.component";
+import { AuthorListComponent } from './lesson7/output-binding/author-list.component';
+import {AuthorDetailsComponent} from "./lesson7/output-binding/author-details.component";
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import {ProgressBarComponent} from "./lesson6/progress-bar.component";
     DirectiveNgforComponent,
     ClassAndStyleBindingComponent,
     InputBindingComponent,
-    ProgressBarComponent
+    ProgressBarComponent,
+    AuthorListComponent,
+    AuthorDetailsComponent
   ],
   imports: [
     BrowserModule,
