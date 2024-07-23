@@ -1,0 +1,43 @@
+<strong>ng-template ng-templateOutlet ng-container</strong>
+
+<!-- ng-template -->
+<!-- 1. Dùng kết hợp với các Structure Directive của Angular, ví dụ như *ngIf -->
+<div *ngIf="age >= 13; else noPG13">Bạn có thể xem nội dung PG-13</div>
+<ng-template #noPG13>
+  <div>Bạn không thể xem nội dung PG-13</div>
+</ng-template>
+<br>
+
+<!--
+2. Khi một số UI element trong một component bị lặp lại trong chính component đó,
+nhưng phần code đó quá nhỏ để tách ra làm một component riêng.
+-->
+<div class="card mx-4">
+  <div class="card-header">
+    You have selected <ng-container [ngTemplateOutlet]="counterTmpl" ]></ng-container> items.
+  </div>
+  <div class="card-body">
+    There are <ng-container [ngTemplateOutlet]="counterTmpl" ]></ng-container> items was selected.
+  </div>
+  <div class="card-footer">
+    You have selected <ng-container [ngTemplateOutlet]="counterTmpl" ]></ng-container> items.
+  </div>
+</div>
+
+<ng-template #counterTmpl>
+  <span class="badge text-bg-danger">{{ counter }}</span>
+</ng-template>
+<br>
+
+<!--3. Dùng ng-template để pass vào component khác. Hỗ trợ override template có sẵn trong component.-->
+<!-- VD 1-->
+<nav-tabs [navTitles]="navTitles"></nav-tabs>
+<br>
+
+<!--VD2-->
+<ng-template #linkTemplate let-l>
+  <h4>{{ l }}</h4>
+</ng-template>
+<nav-tabs [navTitles]="navTitles" [linkTemplate]="linkTemplate"></nav-tabs>
+
+

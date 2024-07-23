@@ -14,7 +14,15 @@ import {ProgressBarComponent} from "./lesson6/progress-bar.component";
 import { AuthorListComponent } from './lesson7/output-binding/author-list.component';
 import {AuthorDetailsComponent} from "./lesson7/output-binding/author-details.component";
 import { TwoWayBindingComponent } from './lesson8/two-way-binding/two-way-binding.component';
-import {ToggleComponent} from "./lesson8/toggle.component";
+import {ToggleComponent} from "./common/toggle.component";
+import { TemplateVariableAndViewChildViewChildrenComponent } from './lesson9/template-variable-and-view-child-view-children.component/template-variable-and-view-child-view-children.component';
+import {FlexComponent} from "./lesson10/typescript-data-type/example-type-alias-and-union-type/flex.component";
+import { ContentProjectionComponent } from './lesson11/content-projection/content-projection.component';
+import { NgTemplateNgTemplateOutletNgContainerComponent } from './lesson12/ng-template-ng-template-outlet-ng-container/ng-template-ng-template-outlet-ng-container.component';
+import {TabsComponent} from "./lesson12/tabs.component";
+import { TabGroupComponent } from './lesson13/dependency-injection/tab-group.component';
+import {TabPanelComponent} from "./lesson13/dependency-injection/tab-panel.component";
+import {TabBootstrapGroupComponent} from "./lesson13/dependency-injection/tab-bootstrap-group.component";
 
 @NgModule({
   declarations: [
@@ -30,7 +38,15 @@ import {ToggleComponent} from "./lesson8/toggle.component";
     AuthorListComponent,
     AuthorDetailsComponent,
     TwoWayBindingComponent,
-    ToggleComponent
+    ToggleComponent,
+    TemplateVariableAndViewChildViewChildrenComponent,
+    FlexComponent,
+    ContentProjectionComponent,
+    NgTemplateNgTemplateOutletNgContainerComponent,
+    TabsComponent,
+    TabGroupComponent,
+    TabPanelComponent,
+    TabBootstrapGroupComponent
   ],
   imports: [
     BrowserModule,

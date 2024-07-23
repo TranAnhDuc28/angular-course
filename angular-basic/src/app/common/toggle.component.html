@@ -1,0 +1,36 @@
+<!--
+- ng-content là một directive trong Angular cho phép bạn chèn nội dung từ component cha vào component con.
+Điều này giúp xây dựng các component linh hoạt hơn và dễ dàng tái sử dụng.
+
+- Multi-slot Content Projection: có thể sử dụng ng-content với các selector để xác định nhiều
+vị trí khác nhau cho nội dung được chèn vào
+
+- Các dạng của selector có thể bao gồm:
++ Tag selector: <ng-content select="some-component-selector-or-html-tag"></ng-content>
++ CSS Class selector: <ng-content select=".some-class"></ng-content>
++ Attribute selector: <ng-content select="[some-attr]"></ng-content>
++ Combine nhiều selectors: <ng-content select="some-component-selector-or-html-tag[some-attr]"></ng-content>
+
+* Lưu ý: khi sử dụng selector nếu project vào nhiều elements thỏa mãn selector đó
+thì ng-content select sẽ nhận hết tất cả các elements.
+-->
+
+<header>
+  <ng-content select=".header"></ng-content>
+</header>
+
+<div class="toggle-wrapper" [class.checked]="checked" tabindex="0" (click)="toggle()">
+  <div class="toggle"></div>
+</div>
+
+<div class="toggle-label">
+  <ng-content select="label"></ng-content>
+</div>
+
+<div class="toggle-content">
+  <ng-content select="p"></ng-content>
+</div>
+
+<div class="skip">
+  <ng-content select="button"></ng-content>
+</div>

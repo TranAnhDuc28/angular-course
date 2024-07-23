@@ -1,0 +1,28 @@
+<strong>template-variable</strong>
+
+<input #nameInput type="text" name="">
+
+
+<!-- toggleComp là instance của ToggleComponent -->
+<!--<toggle #toggleComp [(checked)]="isChecked"></toggle>-->
+
+<!-- ViewChildren -->
+<toggle [(checked)]="isChecked"></toggle>
+<toggle [(checked)]="isChecked"></toggle>
+<div *ngIf="showLast">
+  <toggle [(checked)]="isChecked"></toggle>
+</div>
+<button (click)="showLast = !showLast">Toggle show last</button>
+
+
+<!-- khi đặt @Viewchild('toggleComp', {static: true}) nêu đặt bên trong 1 structure directive (ngIf, ngFor,...) thì sẽ không hoạt động-->
+<!--<div *ngIf="isChecked">-->
+<!--  <toggle #toggleComp [checked]="isChecked"></toggle>-->
+<!--</div>-->
+
+
+<!-- toggleButton là 1 object của HTMLElement -->
+<!--<button #toggleBtn (click)="toggleComp.toggle()">Toggle me</button>-->
+
+
+
