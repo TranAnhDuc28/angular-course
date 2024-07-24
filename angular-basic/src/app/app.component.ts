@@ -18,6 +18,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'angular-basic';
+  title: string = 'angular-basic';
   currentIndex: number = 0;
+  showTab4: boolean = true;
 }

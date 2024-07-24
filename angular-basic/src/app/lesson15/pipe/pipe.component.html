@@ -1,0 +1,62 @@
+Lesson 15 <b>Transform data with Angular Pipes</b>
+
+<!--
+- Pipe là một function nhận input mà chúng ta truyền vào, và output ra giá trị mình mong muốn.
+- Cú pháp: {{ interpolated_value | pipe_name }}
+- Cú pháp Pipe and parameters: {{ interpolated_value | pipe_name:parameter1:parameter2:...:parameterN }}
+-->
+
+<!-- DatePipe: Formats a date.-->
+<!--<p>{{ currentDate | date }}</p>-->
+<!--<p>{{ currentDate | date: 'shortDate' }}</p>-->
+<!--<p>{{ currentDate | date: 'mediumDate' }}</p>-->
+<!--<p>{{ currentDate | date: 'fullDate' }}</p>-->
+<!--<p>{{ currentDate | date: 'dd-MM-yyyy hh:mm:ss aa' }}</p>-->
+
+<!-- UpperCasePipe -	Convert text sang chữ hoa. -->
+<!--<p>{{ 'Trần Anh Đức' | uppercase }}</p>-->
+
+<!-- LowerCasePipe -	Convert text sang chữ thường. -->
+<!--<p>{{ 'Trần Anh Đức' | lowercase }}</p>-->
+
+<!-- CurrencyPipe -	Hiển thị giá trị tiền tệ. -->
+<!--<p>{{ 250 | currency }}</p>-->
+<!--<p>{{ 250000 | currency }}</p>-->
+<!--<p>{{ 250000 | currency: 'VND' }}</p>-->
+
+<!-- DecimalPipe - Hiển thị số thập phân -->
+<!--<p>{{ 2.464637378 | number: '1.1-4' }}</p>-->
+
+<!-- PercentPipe - Hiển thị phần trăm % -->
+<!--<p>{{ 0.57 | percent }}</p>-->
+
+<!-- JsonPipe	- Hiển thị json -->
+<!--<p>{{ user | json }}</p>-->
+
+<!-- AsyncPipe -	Hiển thị value của observable và tự động unsubscribe khi view được destroy -->
+<!--{{ interval$ | async }}-->
+
+{{
+  address.address1 + ' ' +
+  address.address2 + ', ' +
+  address.city + ', ' +
+  address.state + ' ' +
+  address.zip + ', ' +
+  address.country
+}}
+
+<p>{{ formatAddress(address) }}</p>
+
+<p>{{ address | formatAddress: 'param' }}</p> <!-- dùng pipe để tránh bị chạy nhiều lần chỉ khi thay đổi input nó mới chạy -->
+
+Full user list
+<ul>
+  <li *ngFor="let user of users">{{ user.name }} - {{ user.age }}</li>
+</ul>
+
+Adult user list
+<ul>
+  <li *ngFor="let user of users | adult">{{ user.name }} - {{ user.age }}</li>
+</ul>
+
+<button (click)="addUser()">Add user</button>

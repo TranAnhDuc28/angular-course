@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, Output} from '@angular/core';
+import {AfterContentInit, Component, ContentChildren, EventEmitter, Input, Output, QueryList} from '@angular/core';
 import {TabPanelComponent} from "./tab-panel.component";
 
 @Component({
@@ -14,7 +14,7 @@ import {TabPanelComponent} from "./tab-panel.component";
     </div>
 
     <div class="tab-body" *ngIf="tabPanelList.length; else noTabs">
-      <ng-container *ngTemplateOutlet="tabPanelList[activeIndex].panelBody"></ng-container>
+      <ng-container *ngTemplateOutlet="tabPanelList[activeIndex].implicitBody"></ng-container>
     </div>
     <ng-template #noTabs>
       No more tabs.
@@ -43,11 +43,13 @@ import {TabPanelComponent} from "./tab-panel.component";
     `
   ]
 })
-export class TabGroupComponent {
+export class TabGroupComponent implements AfterContentInit{
   tabPanelList: TabPanelComponent[] = [];
 
   @Input() activeIndex: number = 0;
   @Output() activeIndexChange = new EventEmitter<number>();
+
+  @ContentChildren(TabPanelComponent) tabPanels!: QueryList<TabPanelComponent>;
 
   addTab(tab: TabPanelComponent): void {
     // this.tabPanellist.push(tab);
@@ -88,5 +90,10 @@ export class TabGroupComponent {
     console.log('tab active', this.activeIndex);
     this.activeIndex = idxTab;
     this.activeIndexChange.emit(idxTab);
+  }
+
+  ngAfterContentInit(): void {
+    console.log(this.tabPanels);
+    this.tabPanels.changes.subscribe(console.log);
   }
 }

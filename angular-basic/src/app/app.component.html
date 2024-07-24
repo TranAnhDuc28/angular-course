@@ -26,7 +26,7 @@
 
 <!--Lesson 12 <app-ng-template-ng-template-outlet-ng-container></app-ng-template-ng-template-outlet-ng-container>-->
 
-Lesson 13 <h3>Dependency Injection</h3>
+<!-- Lesson 13 <h3>Dependency Injection</h3>
 <tab-group [(activeIndex)]="currentIndex">
   <tab-panel title="First tab">First tab content</tab-panel>
   <tab-panel title="Second tab">Second tab content</tab-panel>
@@ -40,3 +40,38 @@ Lesson 13 <h3>Dependency Injection</h3>
   <tab-panel title="Third tab">Third tab content</tab-panel>
   <tab-panel title="Fourth tab">Fourth tab content</tab-panel>
 </tab-bootstrap-group>
+-->
+
+<!--
+Lesson 14 <h3>Content Child and Children</h3>
+<button class="btn btn-primary" (click)="showTab4 = !showTab4">Toggle tab 4</button>
+<app-content-child-and-children [(activeIndex)]="currentIndex">
+  <tab-panel title="First tab">
+    <ng-template tabContent>
+      First tab content
+      <counter></counter>
+    </ng-template>
+  </tab-panel>
+  <tab-panel title="Second tab">
+    <ng-template tabContent>
+      Second tab content
+      <counter></counter>
+    </ng-template>
+  </tab-panel>
+  <tab-panel title="Third tab">
+    <ng-template tabContent>
+      Third tab content
+      <counter></counter>
+    </ng-template>
+  </tab-panel>
+  <tab-panel title="Fourth tab" *ngIf="showTab4">
+    <ng-template tabContent>
+      Fourth tab content
+      <counter></counter>
+    </ng-template>
+  </tab-panel>
+</app-content-child-and-children>
+-->
+
+<app-pipe></app-pipe>
+

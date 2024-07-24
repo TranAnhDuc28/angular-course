@@ -1,13 +1,13 @@
-import {Component, forwardRef} from "@angular/core";
-import {TabGroupComponent} from "./tab-group.component";
+import {Component, forwardRef} from '@angular/core';
+import {TabGroupComponent} from "../../lesson13/dependency-injection/tab-group.component";
 
-const tabBsGroupComponent = {
+const contentChildAndChildrenComponent = {
   provide: TabGroupComponent,
-  useExisting: forwardRef(() => TabBootstrapGroupComponent)
+  useExisting: forwardRef(() => ContentChildAndChildrenComponent)
 }
 
 @Component({
-  selector: 'tab-bootstrap-group',
+  selector: 'app-content-child-and-children',
   template: `
     <ul class="nav nav-tabs">
       <li class="nav-item" *ngFor="let tab of tabPanelList; index as indexTab">
@@ -20,14 +20,15 @@ const tabBsGroupComponent = {
     </ul>
 
     <div class="tab-body" *ngIf="tabPanelList.length; else noTabs">
-      <ng-container *ngTemplateOutlet="tabPanelList[activeIndex].implicitBody"></ng-container>
+      <ng-container *ngTemplateOutlet="tabPanelList[activeIndex].panelContent"></ng-container>
     </div>
     <ng-template #noTabs>
       No more tabs.
     </ng-template>
   `,
-  providers: [tabBsGroupComponent]
+  styleUrls: ['./content-child-and-children.component.css'],
+  providers: [contentChildAndChildrenComponent]
 })
-export class TabBootstrapGroupComponent extends TabGroupComponent{
+export class ContentChildAndChildrenComponent extends TabGroupComponent{
 
 }

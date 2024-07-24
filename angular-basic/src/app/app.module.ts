@@ -23,6 +23,12 @@ import {TabsComponent} from "./lesson12/tabs.component";
 import { TabGroupComponent } from './lesson13/dependency-injection/tab-group.component';
 import {TabPanelComponent} from "./lesson13/dependency-injection/tab-panel.component";
 import {TabBootstrapGroupComponent} from "./lesson13/dependency-injection/tab-bootstrap-group.component";
+import { ContentChildAndChildrenComponent } from './lesson14/content-child-and-children/content-child-and-children.component';
+import {CounterComponent} from "./lesson14/counter.component";
+import {TabContentDirective} from "./lesson14/content-child-and-children/tab-content.directive";
+import { PipeComponent } from './lesson15/pipe/pipe.component';
+import {FormatAddressPipe} from "./lesson15/format-address.pipe";
+import {AdultPipe} from "./lesson15/adult.pipe";
 
 @NgModule({
   declarations: [
@@ -46,7 +52,13 @@ import {TabBootstrapGroupComponent} from "./lesson13/dependency-injection/tab-bo
     TabsComponent,
     TabGroupComponent,
     TabPanelComponent,
-    TabBootstrapGroupComponent
+    TabBootstrapGroupComponent,
+    ContentChildAndChildrenComponent,
+    CounterComponent,
+    TabContentDirective,
+    PipeComponent,
+    FormatAddressPipe,
+    AdultPipe
   ],
   imports: [
     BrowserModule,
