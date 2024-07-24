@@ -29,6 +29,9 @@ import {TabContentDirective} from "./lesson14/content-child-and-children/tab-con
 import { PipeComponent } from './lesson15/pipe/pipe.component';
 import {FormatAddressPipe} from "./lesson15/format-address.pipe";
 import {AdultPipe} from "./lesson15/adult.pipe";
+import { RxJSComponent } from './lesson16/rx-js/rx-js.component';
+import { RxJSCreationOperatorsComponent } from './lesson17/rx-jscreation-operators/rx-jscreation-operators.component';
+import { RxJsTransformationOperatorsComponent } from './lesson18/rs-jstransformation-operators/rx-js-transformation-operators.component';
 
 @NgModule({
   declarations: [
@@ -58,7 +61,10 @@ import {AdultPipe} from "./lesson15/adult.pipe";
     TabContentDirective,
     PipeComponent,
     FormatAddressPipe,
-    AdultPipe
+    AdultPipe,
+    RxJSComponent,
+    RxJSCreationOperatorsComponent,
+    RxJsTransformationOperatorsComponent
   ],
   imports: [
     BrowserModule,
