@@ -4,7 +4,7 @@ import {fromEvent, map, Observable, Observer, throttleTime} from "rxjs";
 @Component({
   selector: 'app-rx-js',
   templateUrl: './rx-js.component.html',
-  styleUrls: ['./rx-js.component.css']
+  styleUrls: []
 })
 export class RxJSComponent implements OnInit {
 

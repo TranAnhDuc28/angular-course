@@ -32,6 +32,8 @@ import {AdultPipe} from "./lesson15/adult.pipe";
 import { RxJSComponent } from './lesson16/rx-js/rx-js.component';
 import { RxJSCreationOperatorsComponent } from './lesson17/rx-jscreation-operators/rx-jscreation-operators.component';
 import { RxJsTransformationOperatorsComponent } from './lesson18/rs-jstransformation-operators/rx-js-transformation-operators.component';
+import { RxJsFilteringOperatorsComponent } from './lesson19/rx-jsfiltering-operators/rx-js-filtering-operators.component';
+import { RxJsCombinationOperatorsComponent } from './lesson20/rx-js-combination-operators/rx-js-combination-operators.component';
 
 @NgModule({
   declarations: [
@@ -64,7 +66,9 @@ import { RxJsTransformationOperatorsComponent } from './lesson18/rs-jstransforma
     AdultPipe,
     RxJSComponent,
     RxJSCreationOperatorsComponent,
-    RxJsTransformationOperatorsComponent
+    RxJsTransformationOperatorsComponent,
+    RxJsFilteringOperatorsComponent,
+    RxJsCombinationOperatorsComponent
   ],
   imports: [
     BrowserModule,
